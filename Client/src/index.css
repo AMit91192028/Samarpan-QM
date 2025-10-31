@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.wait-book{
+  background: linear-gradient(180deg,#f4fdff 0,#fff 100%);
+  border-radius: 8px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.textFamily{
+  font-family: 'Circular Std';
+}
+.cloud{
+  font-family: 'Poppins,sans-serif';
+  font-weight: 700;
+}
+
+.Centralize{
+  
+  background: linear-gradient(180deg,#f4fdff 0,#fff 100%);
+  border-radius: 8px;
+  width: 87%;
+}
+.whySamarpan{
+  background: linear-gradient(180deg,#f4fdff 0,#fff 100%);
+  border-radius: 8px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  to {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+.fade-out {
+  animation: fadeOut 0.7s ease-in-out;
+}
