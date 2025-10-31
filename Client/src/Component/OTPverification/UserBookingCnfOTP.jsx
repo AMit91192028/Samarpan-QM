@@ -73,7 +73,7 @@ const UserBookingCnfOTP = () => {
 
     try {
       const response = await axios.post(
-        `https://samarpan-qm-backend-1.onrender.com/api/queue/verifyOtp`,
+        `https://samarpan-qm.onrender.com/api/queue/verifyOtp`,
         {   patientName,
             age,
             diseaseDescription,
@@ -103,7 +103,7 @@ const UserBookingCnfOTP = () => {
 //   const handleResend = async () => {
 //     try {
 //       const response = await axios.post(
-//         `https://samarpan-qm-backend-1.onrender.com/api/${role}/resend-otp`,
+//         `https://samarpan-qm.onrender.com/api/${role}/resend-otp`,
 //         { email, role },
 //         { withCredentials: true }
 //       );

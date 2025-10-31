@@ -20,7 +20,7 @@ const AdminQueueCheck = ({adminId}) => {
   useEffect(() => {
     const fetchQueues = async () => {
       try {
-        const response = await axios.get(`https://samarpan-qm-backend-1.onrender.com/api/admin/queues`, {
+        const response = await axios.get(`https://samarpan-qm.onrender.com/api/admin/queues`, {
           params: { adminId: adminId }, // Send adminId as a query parameter
           withCredentials: true
         });
@@ -37,7 +37,7 @@ const AdminQueueCheck = ({adminId}) => {
   const handleStatusChange = async (queueId, newStatus) => {
     setLoading(true); // Start loading
     try {
-      await axios.patch(`https://samarpan-qm-backend-1.onrender.com/api/admin/queue/${queueId}/status`,
+      await axios.patch(`https://samarpan-qm.onrender.com/api/admin/queue/${queueId}/status`,
         { status: newStatus },
         { withCredentials: true }
       );

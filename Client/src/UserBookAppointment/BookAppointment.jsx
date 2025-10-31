@@ -85,7 +85,7 @@ useEffect(()=>{
   useEffect(() => {
     const fetchHospitals = async () => {
       try {
-        const res = await axios.get('https://samarpan-qm-backend-1.onrender.com/api/hospitals/hospitalData');
+        const res = await axios.get('https://samarpan-qm.onrender.com/api/hospitals/hospitalData');
         setHospitals(res.data);
       } catch (error) {
         console.error('Failed to fetch hospitals', error);
@@ -145,7 +145,7 @@ useEffect(()=>{
     };
 
     try {
-     const res= await axios.post(`https://samarpan-qm-backend-1.onrender.com/api/queue/bookQueue`, patientForm);
+     const res= await axios.post(`https://samarpan-qm.onrender.com/api/queue/bookQueue`, patientForm);
      console.log(res.data)
     const actualOtp=res.data.actualOtp;
     const dataTopass={...patientForm,actualOtp}
@@ -321,7 +321,7 @@ useEffect(()=>{
                       className="cursor-pointer bg-white border border-gray-300 rounded-lg hover:bg-teal-50 transition overflow-hidden shadow-sm"
                     >
                       <img
-                        src={`https://samarpan-qm-backend-1.onrender.com/image/uploads/${hospital.image}`}
+                        src={`https://samarpan-qm.onrender.com/image/uploads/${hospital.image}`}
                         alt={hospital.name}
                         className="w-full h-48 object-cover"
                       />
@@ -367,7 +367,7 @@ useEffect(()=>{
                       {/* Doctor Image */}
                       <div className="w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
                         <img
-                          src={`https://samarpan-qm-backend-1.onrender.com/image/uploads/${doc.drImage}`}
+                          src={`https://samarpan-qm.onrender.com/image/uploads/${doc.drImage}`}
                           alt="Doctor"
                           className="w-full h-full object-cover"
                         />

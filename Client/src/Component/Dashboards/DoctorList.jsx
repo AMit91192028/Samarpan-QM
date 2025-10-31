@@ -7,7 +7,7 @@ const DoctorList = ({ hospitalId, handleEdit,refreshDoctors }) => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await axios.post(`https://samarpan-qm-backend-1.onrender.com/api/doctors/hospital/${hospitalId}`);
+        const response = await axios.post(`https://samarpan-qm.onrender.com/api/doctors/hospital/${hospitalId}`);
         if (response.data.success) {
           setDoctors(response.data.doctors);
           console.log(response.data.doctors)
@@ -40,7 +40,7 @@ const DoctorList = ({ hospitalId, handleEdit,refreshDoctors }) => {
             return (
               <div key={doctor._id} className="bg-white shadow-md rounded-xl overflow-hidden p-4">
                 <img
-                  src={`https://samarpan-qm-backend-1.onrender.com/image/uploads/${doctor.image}`}
+                  src={`https://samarpan-qm.onrender.com/image/uploads/${doctor.image}`}
                   alt={doctor.name}
                   className="w-full h-48 object-cover rounded-md mb-4"
                 />

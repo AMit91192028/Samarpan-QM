@@ -72,9 +72,9 @@ const DoctorForm = ({ hospitalId,editingDoctor,onFormSubmit }) => {
       let url = '';
       if (editingDoctor) {
         formData.append('doctorId', editingDoctor._id);
-        url = `https://samarpan-qm-backend-1.onrender.com/api/doctors/hospital/${hospitalId}`;
+        url = `https://samarpan-qm.onrender.com/api/doctors/hospital/${hospitalId}`;
       } else {
-        url = `https://samarpan-qm-backend-1.onrender.com/api/doctors/add`;
+        url = `https://samarpan-qm.onrender.com/api/doctors/add`;
       }
 
       const response = await axios.post(url, formData, {

@@ -16,7 +16,7 @@ export default function UserDashboard() {
   }
   const UserLogout = async () => {
     try {
-      await axios.post('https://samarpan-qm-backend-1.onrender.com/api/user/logout', {}, { withCredentials: true });
+      await axios.post('https://samarpan-qm.onrender.com/api/user/logout', {}, { withCredentials: true });
       navigate('/');
     } catch (error) {
       console.error('Error logging out:', error.message);

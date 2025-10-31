@@ -27,7 +27,7 @@ const HospitalDashboard = () => {
   const fetchHospitals = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("https://samarpan-qm-backend-1.onrender.com/api/hospitals/hospitalData");
+      const res = await axios.get("https://samarpan-qm.onrender.com/api/hospitals/hospitalData");
       setHospitals(res.data);
     } catch (err) {
       toast.error("Failed to load hospitals");

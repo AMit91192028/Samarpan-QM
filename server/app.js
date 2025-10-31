@@ -56,23 +56,16 @@ app.use('/api/bookings', bookingRoutes);
 
 
 app.get('*name',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../public/index copy.html'))
+    res.sendFile(path.join(__dirname,'./public/index.html'))
 })
 // Scheduler (every minute)
 cron.schedule('* * * * *', updateStaus);
 
 // MongoDB connection and server start
 const PORT = process.env.PORT || 4001;
-const MONGO_URI =
-  process.env.MONGO_URI ||
-  'mongodb+srv://ay9336148501:5nmSXyOAhHTtKsYm@updatequeue.kboyjfm.mongodb.net/?retryWrites=true&w=majority&appName=UPDATEQueue';
+const MONGO_URI = process.env.MONGO_URI
 
-mongoose
-  .connect(MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 10000,
-  })
+mongoose.connect(MONGO_URI)
   .then(() => {
     console.log('✅ MongoDB connected');
     app.listen(PORT, () => {

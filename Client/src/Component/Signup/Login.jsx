@@ -22,7 +22,7 @@ export default function Login() {
     }
     document.cookie = "token=; Max-Age=0; path=/;"; 
     try {
-      const response = await axios.post(`https://samarpan-qm-backend-1.onrender.com/api/${role}/login`, {
+      const response = await axios.post(`https://samarpan-qm.onrender.com/api/${role}/login`, {
         email,
         password},
         {

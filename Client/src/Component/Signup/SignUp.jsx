@@ -61,7 +61,7 @@ export default function SignUp() {
 
     try {
       setIsSubmitting(true);
-      const response = await axios.post(`https://samarpan-qm-backend-1.onrender.com/api/${isUser}/register`, dataToSend);
+      const response = await axios.post(`https://samarpan-qm.onrender.com/api/${isUser}/register`, dataToSend);
       if (response.status === 200) {
         toast.success(`${isUser.charAt(0).toUpperCase() + isUser.slice(1)} successfully registered!`);
         resetFields();
