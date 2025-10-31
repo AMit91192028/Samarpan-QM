@@ -76,7 +76,7 @@ const loginUser = async (req, res) => {
     await user.save();
 
     // Send OTP via SMS or Email
-    const sendSmsResult = await sendSms(user.phone, `Your OTP is ${otp}`);
+    // const sendSmsResult = await sendSms(user.phone, `Your OTP is ${otp}`);
     const sendEmailResult = await sendEmail(user.email, 'Your OTP Code', `Your OTP is ${otp}`);
 
     if (!sendEmailResult) {
@@ -121,7 +121,7 @@ const resendOtp = async (req, res) => {
     await user.save();
 
     // Send OTP via SMS or Email
-    const sendSmsResult = await sendSms(user.phone, `Your OTP is ${otp}`);
+    // const sendSmsResult = await sendSms(user.phone, `Your OTP is ${otp}`);
     const sendEmailResult = await sendEmail(user.email, 'Your OTP Code', `Your OTP is ${otp}`);
     
     if (!sendEmailResult) {
