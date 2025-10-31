@@ -15,30 +15,17 @@ const app = express();
 
 app.set('trust proxy', 1);
 
+app.use(cors({
+    origin:'http://localhost:5173',
+    credentials:true
+}))
+
 app.use(express.json());
 app.use(cookieParser());
 
-const allowedOrigins = [
-  'http://localhost:5173',
-  'https://samarpan-qm-fronted.vercel.app',
-];
-
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin) || /vercel\.app$/.test(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    credentials: true,
-  })
-);
-
 // Static image route
 app.use('/image', express.static(path.join(__dirname, 'public', 'images')));
-
+app.use(express.static(path.join(__dirname,'./public')))
 // Routes
 const hospitalRoutes = require('./routes/hospitalRoutes');
 const queueBookingRouter = require('./routes/queueBooking');
